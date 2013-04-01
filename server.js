@@ -31,7 +31,16 @@ var DarkSlides = function() {
             self.ipaddress = "127.0.0.1";
         };
 
-        self.keyPair = self.createKeyPair();
+        // Allow these secrets to be loaded from the system environment
+        // Secure tokens will survive app restarts if added to the environment
+        if( process.env.OPENSHIFT_DARKSLIDE_SECRET && process.env.OPENSHIFT_DARKSLIDE_SOCKET ){
+            self.keyPair = {
+                secret: process.env.OPENSHIFT_DARKSLIDE_SECRET, 
+                socketId: process.env.OPENSHIFT_DARKSLIDE_SOCKET
+            };
+        }else{
+            self.keyPair = self.createKeyPair();
+        }
     };
 
     self.createHash = function(secret) {
