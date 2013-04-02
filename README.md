@@ -1,6 +1,7 @@
 # Welcome to the DarkSlide
 
 [![Build Status](https://travis-ci.org/ryanj/darkslides.png?branch=master)](https://travis-ci.org/ryanj/darkslides)
+[![HTML5lint](http://www.w3.org/html/logo/downloads/HTML5_Logo_256.png)](http://lint.brihten.com/html/?url=http://darkslides-rjdemo.rhcloud.com)
 
 Node.js on OpenShift
 ====================================================================
@@ -29,13 +30,13 @@ Host your Node.js applications on OpenShift
 
 Create a Node.js application.  This example will produce an application named **nodeapp**:
 
-    rhc app create nodeapp nodejs --from-code=git://github.com/ryanj/nodejs-custom-version-openshift.git
+    rhc app create darkslides nodejs --from-code=git://github.com/ryanj/darkslides.git
 
 The above example will output a folder named after your application which contains your local development source.  Make sure to run it from within a directory where you would like to store your development code.
 
 That's it!  You should be able to access your application at:
 
-    http://nodeapp-$yournamespace.rhcloud.com
+    http://darkslides-$yournamespace.rhcloud.com
 
 If your app requires a specific version of Node.js, just update the 'engines' section of your app's `package.json` file to specify your runtime requirements:
 
