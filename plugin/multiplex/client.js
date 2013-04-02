@@ -13,12 +13,40 @@
         	// ignore data from sockets that aren't ours
         	if (data.socketId !== socketId) { return; }
         	if( window.location.host === 'localhost:1947' ) return;
-        	Reveal.slide(data.indexh, data.indexv, null, 'remote');
+          if( data.indexh !== undefined && data.indexv !== undefined){
+           	Reveal.slide(data.indexh, data.indexv, null, 'remote');
+          }else{
+            if(data.direction == 'next'){
+              Reveal.nextFragment();
+            }else{
+              Reveal.prevFragment();
+            }
+          }
         });
     }else{
         console.log('sending broadcaster tokens...');
         var multiplex = Reveal.getConfig().multiplex;
         var socket = io.connect(multiplex.url);
+
+        Reveal.addEventListener( 'fragmentshown', function( event ) {
+          console.log(event);
+        	var data = {
+        		secret: localStorage.secret,
+        		socketId : multiplex.id,
+            direction: 'next'
+        	};
+        	if( typeof event.origin === 'undefined' && event.origin !== 'remote' ) socket.emit('navigation', data);
+        } );
+
+        Reveal.addEventListener( 'fragmenthidden', function( event ) {
+          console.log(event);
+        	var data = {
+        		secret: localStorage.secret,
+        		socketId : multiplex.id,
+            direction: 'prev'
+        	};
+        	if( typeof event.origin === 'undefined' && event.origin !== 'remote' ) socket.emit('navigation', data);
+        } );
 
         Reveal.addEventListener( 'slidechanged', function( event ) {
         	var nextindexh;
