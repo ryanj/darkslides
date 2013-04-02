@@ -1,28 +1,24 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
+		<meta charset="utf-8" />
+		<title>DarkSlides - broadcasting Reveal.js on OpenShift</title>
 
-		<title>reveal.js - The HTML Presentation Framework</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Create beautiful presentations using HTML5" />
+		<meta name="author" content="Ryan Jarvinen" />
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/reveal.min.css" />
+		<link rel="stylesheet" href="css/theme/default.css" id="theme" />
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/zenburn.css" />
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+                <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print" />
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -32,68 +28,364 @@
 	<body>
 
 		<div class="reveal">
-
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+    <section>
+        <section>
+            <h1>Javascript Release Management</h1>
+            <p>in</p>
+            <h2>"The Cloud"&trade;</h2>
+            <br/>
+            <p>starring</p>
+            <h2>OpenShift</h2>
+            <br/>
+            <p><a href='http://bit.ly/XDCQAu'>http://bit.ly/XDCQAu</a></p>
+        </section>
+        <section>
+            <div>presented by</div>
+            <br/>
+            <div><a href='http://ryanjarvinen.com/'>ryan jarvinen</a> / <a href='http://twitter.com/ryanj/'>@ryanj</a></div>
+        </section>
+        <section data-state="blackout">
+            <div>
+                <div> Open Platform Evangelist </div>
+                <div style="">at</div>
+                <div style="">Red Hat</div>
+                <div style="">
+                    <br>
+                </div>
+                <div style="">ryanj@redhat.com</div>
+            </div>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Agenda</h1> 
+          <ul>
+            <li class='fragment roll-in'>Cloud Landscape Overview</li>
+            <li class='fragment roll-in'>JavaScript Development</li>
+            <li class='fragment roll-in'>Git Deployment, Build Automation</li>
+            <li class='fragment roll-in'>Auto-Scaling out of the box</li>
+          </ul>
+        </section>
+        <section>
+          <h1>Code du jour</h1>
+          <p><a href='https://github.com/ryanj/darkslides'>https://github.com/ryanj/darkslides/</a></p>
+<br/>
+          <p><a href='https://openshift.redhat.com/app/account/new?web_user[promo_code]=HTML5CONF'>Signup with Code - HTML5CONF</a></p>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>The Cloud</h1> 
+          <h1 class='fragment roll-in'><span class='fragment grow'>IS</span></h1>
+          <h2 class='fragment roll-in'><span class='fragment grow'>a free-market for online services</span></h2>
+        </section>
+        <section>
+          <h1>The Cloud Landscape</h1> 
+          <div class='fragment roll-in'><img width='80%' src='img/paas-overview.png'/></div> 
+        </section>
+        <section>
+          <h2>The big picture</h2>
+          <div class='fragment roll-in'><img src='img/PaaS-landscape.png'/></div> 
+        </section>
+        <section>
+          <h2>OpenStack</h2> 
+          <h1 class='fragment roll-in'>IS OPEN</h1>
+          <div class='fragment roll-in'>and<br/></div>
+          <div class='fragment roll-in'><h1>focused on IaaS</h1></div>
+        </section>
+        <section>
+          <h1 class='fragment roll-in'><span class='fragment roll-in'>Public Cloud</span><span class='fragment roll-in'> + </span><span class='fragment roll-in'>Private Cloud</span><span class='fragment roll-in'> = </span></h1>
+         <h1 class='fragment roll-in'><span class='fragment roll-in'>Hybrid Cloud</span></h1>
+        </section>
+      </section>
 
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
-				</section>
+      <section>
+        <section>
+          <h2>OpenShift Is&hellip;</h2> 
+          <h1 class='fragment roll-in'><span class='fragment grow'>OPEN</span></h1>
+        </section>
+        <section>
+          <h1>Open cartridge format</h1> 
+        </section>
+        <section>
+          <h2>Open Source</h2> 
+          <h1 class='fragment roll-in'><span class='fragment grow'>OpenShift Origin</span></h1>
+        </section>
+        <section>
+          <h2>Hosting Options</h2> 
+          <h2 class='fragment roll-in'>DIY</h2>
+          <h2 class='fragment roll-in'>OpenShift Online</h2>
+          <h2 class='fragment roll-in'>OpenShift Enterprise</h2>
+        </section>
+        <section>
+          <h2>Developer Preview</h2> 
+          <div><p>Make sure that you sign up for a <a href="https://openshift.redhat.com/app/account/new">free OpenShift account</a></p>
+<p class='fragment roll-in'><a href="https://openshift.redhat.com/app/account/new">http://openshift.redhat.com/</a></p>
+<p><ul>
+<li class='fragment roll-in'>Free-as-in-beer</li>
+<li class='fragment roll-in'>Free-as-in-freedom</li>
+<li class='fragment roll-in'>512 MB RAM / 1 GB storage per gears <span class='fragment highlight-blue'><i>(3 free)</i></span></li> 
+<li class='fragment roll-in'>Need more resources, just ask!</li>
+<li class='fragment roll-in'><i>REALLY</i> a Developer Preview</li>
+</ul></p>
+</div>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>Getting Started with OpenShift</h2> 
+          <h4 class='fragment roll-in'>pre-requisites:</h4>
+          <div class='fragment roll-in'>ruby, rubygems</div>
+          <div class='fragment roll-in'>git</div>
+        </section>
+        <section>
+          <h2>Installing the 'rhc' client tool</h2> 
+          <div class='fragment roll-in'><pre><code contenteditable>sudo gem install rhc</code></pre></div>
+          <div class='fragment roll-in'>and</div>
+          <div class='fragment roll-in'>install <a href='http://nodejs.org/'>node.js</a></div>
+        </section>
+        <section>
+          <h2>Help with client tools</h2> 
+          <ul>
+          <li class='fragment roll-in'><a href="https://openshift.redhat.com/community/developers/get-started">Openshift Getting Started guide</a></li>
+          <li class='fragment roll-in'><a href="https://openshift.redhat.com/community/developers/install-the-client-tools">RHC client tools installation</a></li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>Configuring your dev environment</h2> 
+          <pre class='fragment roll-in'><code contenteditable>rhc setup</code></pre>
+          <div><ul><li class='fragment roll-in'>sets your openshift email address</li>
+                   <li class='fragment roll-in'>verifies your ssh key configuration</li>
+                   <li class='fragment roll-in'>selects your application namespace</li></ul></div>
+        </section>
+      </section>
+      
+      
+      <section>
+        <section>
+          <h1>MongoDB Spatial</h1>
+          <div><img src='img/mongo_spatial.png' alt='spatial mongo'/></div>
+        </section>
+        <section>
+          <h1>Spatial Notes</h1>
+          <div>MongoDB currently supports the following types of spatial queries:<br/>
+<ol><li class='fragment roll-in'>Near</li>
+<li class='fragment roll-in'>Containment</li></ol>
+<br/>
+<br/>
+<p class='fragment roll-in'>MongoDB GIS summary:<br/>
+<a href='http://www.mongodb.org/display/DOCS/Geospatial+Indexing'>http://www.mongodb.org/display/DOCS/Geospatial+Indexing</a> </p>
+</div>
+        </section>
+        <section>
+          <h1>MongoDB Assumptions</h1>
+          <ul>
+            <li class='fragment roll-in'>Assumes coords. are between -180 and 180</li>
+            <li class='fragment roll-in'>Can handle any 2D coordinates</li>
+            <li class='fragment roll-in'>Has methods to handle curvature of the earth (spherical)</li>
+          </ul>
+        </section>
+        <section>
+          <h1>Making it work</h1>
+          <p><b>1. Put your data in an array</b><br/>
+             <pre><code contenteditable>{ loc : [ 50 , 30 ] } //SUGGESTED OPTION
+{ loc : { x : 50 , y : 30 } }
+{ loc : { foo : 50 , y : 30 } }
+{ loc : { lon : 40.739037, lat: 73.992964 } }</code></pre>
+          </p> 
+          <p><b>2. Add a 2d index to your collection</b><br/>
+             <pre><code contenteditable>db.places.ensureIndex( { loc : "2d" } )</code></pre></p>
+        </section>
+      </section>
 
+      <section>
+        <section>
+          <h2>Gearing up a new app on OpenShift</h2> 
+          <div class='fragment roll-in'><pre><code contenteditable>rhc app create APP_NAME APP_CARTRIDGE</code></pre></div>
+          <div class='fragment roll-in'>or</div>
+          <div class='fragment roll-in'><pre><code contenteditable>rhc app create parks nodejs mongodb-2.2 --from-code=https://github.com/openshift/openshift-mongo-node-express-example.git</code></pre></div>
+        </section>
 				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
+<pre><code>Application Options
+-------------------
+  Namespace:  ryanj
+  Cartridges: nodejs-0.6, mongodb-2.2
+  Source Code: https://github.com/openshift/openshift-mongo-node-express-example.git
+  Gear Size:  default
+  Scaling:    no
 
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section>
+Creating application 'parks' ... done
 
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://hakim.se/projects/reveal-js">Leave feedback on my site</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
+Waiting for your DNS name to be available ... done
 
+Downloading the application Git repository ...
+Cloning into 'parks'...</code></pre>
+                </section>
 				<section>
-					<h2>It's free</h2>
-					<p>
-						reveal.js and <a href="http://www.rvl.io">rvl.io</a> are entirely free but if you'd like to support the projects you can donate below.
-						Donations will go towards hosting and domain costs.
-					</p>
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-						<input type="hidden" name="cmd" value="_donations">
-						<input type="hidden" name="business" value="hakim.elhattab@gmail.com">
-						<input type="hidden" name="lc" value="US">
-						<input type="hidden" name="item_name" value="reveal.js / rvl.io">
-						<input type="hidden" name="no_note" value="0">
-						<input type="hidden" name="currency_code" value="USD">
-						<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
-						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-					</form>
-				</section>
+<pre><code contenteditable>parks @ http://parks-ryanj.rhcloud.com/ (uuid: 25918304bf8d406e89802a1e642063a0)
+---------------------------------------------------
+  Created:   10:23 PM
+  Gear Size: small
+  Git URL:  
+ssh://25918304bf8d406e89802a1e642063a0@parks-ryanj.rhcloud.com/~/git/parks.git/
+  SSH:       25918304bf8d406e89802a1e642063a0@parks-ryanj.rhcloud.com
 
+  nodejs-0.6 (Node.js 0.6)
+  ------------------------
+
+RESULT:
+Application parks was created.</code></pre>
+                </section>
+        <section>
+          <pre><code contenteditable>Adding mongodb-2.2 to application 'parks' ... Success
+
+mongodb-2.2 (MongoDB NoSQL Database 2.2)
+----------------------------------------
+  Connection URL: mongodb://127.6.102.129:27017/
+  Database Name:  parks
+  Password:       T5xJwCiDZYGn
+  Username:       admin
+
+RESULT:
+Added mongodb-2.2 to application parks</code></pre>
+        </section>
+                <section>
+<h2>Success!</h2> 
+<p>You now have a basic node.js app up an running on OpenShift!</p>
+<br/>
+                  <p class='fragment roll-in'>Your gear is now configured with:</p> 
+          <div><ul><li class='fragment roll-in'>it's own git repo</li>
+                   <li class='fragment roll-in'>it's own web server</li>
+                   <li class='fragment roll-in'>MongoDB</li>
+                   <li class='fragment roll-in'>ssh access</li>
+                   <li class='fragment roll-in'>logging</li>
+                   <li class='fragment roll-in'>publicly accessible DNS</li></ul></div>
+                </section>
+      </section>
+      <section>
+        <section>
+          <h2>Building your App</h2> 
+          <div class='fragment roll-in'><pre><code contenteditable> cd parks </code></pre></div>
+        </section>
+        <section>
+          <h2>Setting up MongoDB on Openshift</h2> 
+          <div class='fragment roll-in'><pre><code contenteditable>rhc cartridge add mongodb-2.2</code></pre></div>
+        </section>
+	<section>
+          <h2>Installing dependencies</h2>
+          <p>Using Node's <a href="https://npmjs.org/">npm package manager</a>:
+          <pre><code contenteditable>npm install mongojs -S</code></pre>
+          <p>Include the <code>-S</code> flag in order to save this dependency to your application's <code>package.json</code> file.</p>
+          <p><a href="http://npmjs.org/package/mongojs/">http://npmjs.org/package/mongojs/</a></p>
+                </section>
+                </section>
+                <section>
+		<section>
+<h2>Committing your changes</h2>
+<pre><code contenteditable>git add package.json server.js</code></pre>
+<p>Commit your changes locally</p>
+<pre><code contenteditable>git commit -m 'adding mongojs npm dependency, initializing mongojs library, adding a basic API'</code></pre>
+                </section>
+        <section>
+          <h2>deployment</h2> 
+          <div class='fragment roll-in'><pre><code contenteditable>git push</code></pre></div>
+          <div class='fragment roll-in'><p><b><i>Done!</i></b>Your spatial app should now be live <i>IN THE CLOUD!</i></p></div>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>RockMongo on Openshift</h2> 
+          <div class='fragment roll-in'><pre><code contenteditable>rhc cartridge add rockmongo-1.1</code></pre></div>
+          <div class='fragment roll-in'><p><i>(optional)</i></p></div>
+        </section>
+        <section>
+          <h2>Connecting to MongoDB</h2> 
+          <div class='fragment roll-in'><pre><code contenteditable>var mongojs = require('mongojs');
+var connection_string = bot_name;
+if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
+  connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+ process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+ process.env.OPENSHIFT_MONGODB_DB_HOST + '/' +
+ process.env.OPENSHIFT_APP_NAME;
+}
+var db = mongojs(connection_string, ['scoreboard']);</code></pre>
+</div>
+        </section>
+        <section>
+          <h1>SSH to the Cloud</h1>
+          <div>
+          <h3>Find your app's SSH address</h3>
+          <pre><code contenteditable>rhc app show parks</code></pre>
+          <h3>SSH in to your OpenShift Gear</h3>
+          <pre><code contenteditable>rhc ssh -a APP_NAME</code></pre>
+          </div>
+        </section>
+        <section>
+          <h1>Importing your data</h1>
+          <pre><code contenteditable>mongoimport -d parks -c parkpoints --type json --file $OPENSHIFT_REPO_DIR/parkcoord.json  -h $OPENSHIFT_MONGODB_DB_HOST  -u admin -p $OPENSHIFT_MONGODB_DB_PASSWORD</code></pre>
+        </section>
+        <section>
+          <h1>Adding a 2D index</h1>
+          <h4>Connect to MongoDB CLI</h4>
+          <p><pre><code contenteditable>mongo</code></pre></p>
+          <h4>Select your collection</h4>
+          <p><pre><code contenteditable>use parks</code></pre></p>
+          <h4>Add the 2D index</h4>
+          <p><pre><code contenteditable>db.parkpoints.ensureIndex({"pos":"2d"});</code></pre></p>
+        </section>
+        <section>
+          <h1>Spatial Queries</h1>
+          <h4>Finding Points Near &hellip;</h4>
+          <p><pre><code contenteditable>db.parkpoints.find({"pos" : { "$near" : [-37, 41]}});</code></pre></p>
+          <h4>Find by Name (regex)</h4>
+          <p><pre><code contenteditable>db.parkpoints.find( { Name : /lincoln/i, pos : { $near : [-37,41] }} );</code></pre></p>
+          <h4>GeoNear</h4>
+          <p><pre><code contenteditable>db.runCommand({ geoNear : "parkpoints", near : [-37,41], num : 10 });</code></pre></p>
+
+        </section>
+        <section>
+<h1>Adding Check-ins</h1>
+<h3>create a new collection from scratch</h3>
+<pre><code contenteditable>db.createCollection("checkin");
+db.checkin.ensureIndex( { "pos" : "2d" } );</code></pre>
+<h3>insert a new record</h3>
+<pre><code contenteditable>db.checkin.insert({ "created" : new Date(), "Notes" : 'just landed', "pos" : [-76.7302 , 25.5332 ] })</code></pre>
+<h3>quick query to make sure it worked</h3>
+<pre><code contenteditable>db.checkin.find( { pos : { $near : [-37,41] } } )</code></pre>
+        </section>
+        <section>
+<h3>add a second document closer to query point</h3>
+<h4>this is an upsert - since we don't pass in the _id it creates a new record</h4>
+<pre><code contenteditable>db.checkin.save({ created : new Date(), Notes: 'that was a big step', pos : [-37.7302 , 40.5332 ]});</code></pre>
+<h3>one way to update original document</h3>
+<pre><code contenteditable>myDoc = db.checkin.findOne({_id : ObjectId("50130d8ea8f6532e83026bc1")});
+myDoc.Notes = "really the landing";
+db.checkin.save(myDoc);</code></pre>
+        </section>
+      </section>
+      <section>
+			  <section>
+                           <h1>Conclusions</h1>
+                           <ol>
+                           <li>Spatial on MongoDB is easy and fun</li>
+                           <li>You can now build your own FourSquare or other checkin application.</li>
+                           <li>You can also build your own field data entry system.</li>
+                           <li>You can build and deploy your application quickly without having to think about infrastructure.</li>
+                           </ol>
+			  </section>
 				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
-				</section>
+<p><i><b>Thanks for following along!</b></i></p>
+	<p>--ryanj</p>
+<p>Signup Code: <a href='https://openshift.redhat.com/app/account/new?web_user[promo_code]=HTML5CONF'>MONGODC13</a>/<p>
+                </section>
+      </section>
 
 			</div>
-
+                    <img style="position:fixed;width:15%;z-index:30;bottom:20px;left:20px;" src="img/RH_logo-trans_reverse.png"/>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
@@ -133,6 +425,14 @@
 				]
 			});
 
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-20043816-1']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
 		</script>
 
 	</body>

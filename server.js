@@ -114,7 +114,7 @@ var DarkSlides = function() {
         self.app.configure(function(){
             //self.app.use(express.cookieParser());
             //self.app.use.(express.session({secret:"secret",key:"express.sid"}));
-            ['css', 'js', 'plugin', 'lib'].forEach(function (dir){
+            ['css', 'img', 'js', 'plugin', 'lib'].forEach(function (dir){
                 self.app.use('/'+dir, express.static(__dirname+'/'+dir));
             });
             self.app.set('views', __dirname + '/views');
