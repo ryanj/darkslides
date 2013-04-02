@@ -1,7 +1,7 @@
 # Welcome to the DarkSlide
 
 [![Build Status](https://travis-ci.org/ryanj/darkslides.png?branch=master)](https://travis-ci.org/ryanj/darkslides)
-[![HTML5lint](http://www.w3.org/html/logo/downloads/HTML5_Logo_256.png)](http://lint.brihten.com/html/?url=http://darkslides-rjdemo.rhcloud.com)
+[![HTMLlint](http://badges.brihten.com/lint/badge-medium.png)](http://lint.brihten.com/html/report?u=http%3A//darkslides-rjdemo.rhcloud.com&s=0000000)
 
 Node.js on OpenShift
 ====================================================================
