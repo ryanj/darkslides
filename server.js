@@ -166,6 +166,13 @@ var DarkSlides = function() {
                     socket.broadcast.emit(slideData.socketId, slideData);
                 };
             });
+            socket.on('navigation', function(data) {
+                if (typeof data.secret == 'undefined' || data.secret == null || data.secret === '') return;
+                if (self.createHash(data.secret) === data.socketId) {
+                    data.secret = null;
+                    socket.broadcast.emit(data.socketId, data);
+                };
+            });
         });
     };
 

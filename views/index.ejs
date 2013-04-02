@@ -67,6 +67,11 @@
       </section>
       <section>
         <section>
+          <img style='height:90%' src='img/alphie_hello_cloud.png' alt='cloud9 ide'/>
+        </section>
+      </section>
+      <section>
+        <section>
           <h1>The Cloud</h1> 
           <h2 class='fragment roll-in'><span class='fragment grow'>IS</span></h2>
           <h2 class='fragment roll-in'><span class='fragment grow'>a free market for online services</span></h2>
@@ -88,22 +93,36 @@
           <p><a href='https://www.openshift.com/page/origin-community-day-april-2013'>OpenShift Origin Community Day (April 14)</a></p>
         </section>
         <section>
+          <p>Figure A: Gear</p>
+          <img style='height:80%' alt='OpenShift gear' src='img/gear.png'/>
+        </section>
+        <section>
           <h1>OpenShift Origin</h1>
-          <p>An open source community for auto-clustering, infrastructure agnostic, scalable cloud application containers</h2>
+          <p>An open source community for auto-clustering, infrastructure agnostic, cloud-scaling application containers</h2>
           <p><a href='http://openshift.github.com/'>http://openshift.github.com/</a></p>
         </section>
         <section>
-          <h2>Hosting Options</h2> 
-          <h2 class='fragment roll-in'>DIY / Private cloud</h2>
-          <h2 class='fragment roll-in'>OpenShift Online</h2>
-          <h2 class='fragment roll-in'>OpenShift Enterprise</h2>
+          <h2>Hosting Options:</h2> 
+          <h2 class='fragment roll-in'>1. DIY / Private cloud&nbsp;&nbsp;</h2>
+          <h2 class='fragment roll-in'>2. OpenShift Online&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+          <h2 class='fragment roll-in'>3. OpenShift Enterprise</h2>
         </section>
         <section>
           <h1>Open client tools</h1> 
-          <p>rhc</p>
+          <h2>RHC</h2>
+          <div class='fragment roll-in'><pre><code contenteditable>sudo gem install rhc</code></pre></div>
+          <div class='fragment roll-in'><pre><code contenteditable>rhc setup</code></pre></div>
+          <div><ul><li class='fragment roll-in'>sets your openshift email address</li>
+                   <li class='fragment roll-in'>verifies your ssh key configuration</li>
+                   <li class='fragment roll-in'>selects your application namespace</li></ul></div>
+          <br/>
+          <p class='fragment roll-in'>pre-requisites:</p>
+          <div class='fragment roll-in'>ruby, rubygems, git</div>
+          <p><a href='https://github.com/openshift/rhc'>https://github.com/openshift/rhc</a></p>
         </section>
         <section>
-          <h1>Open cartridge format</h1> 
+          <h2>Open cartridge format</h2> 
+          <img style='height:80%' class='fragment roll-in' alt='OpenShift Cartridge' src='img/Openshift-Cartridge.png'/>
         </section>
         <section>
           <h2>The big picture</h2>
@@ -111,87 +130,63 @@
         </section>
         <section>
           <h2>Developer Preview</h2> 
-          <div><p>Make sure that you sign up for a <a href="https://openshift.redhat.com/app/account/new">free OpenShift account</a></p>
-            <p class='fragment roll-in'><a href="https://openshift.redhat.com/app/account/new">http://openshift.redhat.com/</a></p>
-<p><ul>
-              <li class='fragment roll-in'>Free-as-in-beer</li>
-              <li class='fragment roll-in'>Free-as-in-freedom</li>
-              <li class='fragment roll-in'>512 MB RAM / 1 GB storage per gears <span class='fragment highlight-blue'><i>(3 free)</i></span></li> 
-              <li class='fragment roll-in'>Need more resources, just ask!</li>
-              <li class='fragment roll-in'><i>REALLY</i> a Developer Preview</li>
+          <div><p>Make sure that you sign up for a <a href="https://openshift.redhat.com/app/account/new?web_user%5Bpromo_code%5D=HTML5CONF">free OpenShift account</a></p>
+            <a href="https://openshift.redhat.com/app/account/new?web_user%5Bpromo_code%5D=HTML5CONF">http://openshift.redhat.com/</a></p>
+            <p><ul>
+              <li class='fragment roll-in'>Free-as-in-beer (<span class='fragment highlight-red'>no cost</span>)</li>
+              <li class='fragment roll-in'>Free-as-in-freedom (<span class='fragment highlight-red'>open source</span>)</li>
+              <li class='fragment roll-in'>512 MB RAM / 1 GB storage per gear (<span class='fragment highlight-red'><i>3 free</i></span>)</li> 
+              <li class='fragment roll-in'>Need more resources? (<span class='fragment highlight-red'>just ask!</span>)</li>
+              <li class='fragment roll-in'><i>REALLY</i> a Developer Preview (<span class='fragment highlight-red'>GA this summer</span>)</li>
             </ul></p>
+            <br/>
+            <br/>
+            <p class='fragment roll-in'><a href='http://openshift.com/pricing/'>Want more info?</a></p>
           </div>
         </section>
       </section>
       <section>
         <section>
-          <h1>Javascript Developement</h1> 
+          <h1>Javascript Development</h1> 
         </section>
         <section>
-          <h1>C9.io</h1>
+          <img style='height:70%' src='img/Cloud9-IDE.png' alt='cloud9 ide'/>
           <p>Start in the cloud</p>
         </section>
         <section>
-          <h2>Migrating existing git projects</h2>
-          <p><a href='https://gist.github.com/ryanj/5267357'>a git-based approach</a></p>
-        </section>
-        <section>
-          <h2>the 'rhc' command line</h2>
-        </section>
-        <section>
           <h1>Grunt</h1>
+          <img style='height:70%' src='img/grunt.png' alt='Grunt tasks'/>
         </section>
         <section>
           <h2>Yo, I'll see you in the future</h2>
-          <p>include a list of quickstarts, and a list of yo templates</p>
+          <img style='height:70%' src='img/yeoman.png' alt='yeoman scaffolds'/>
         </section>
         <section>
-          <h1>SSH and port forwarding</h1>
-          <p>for local access to remote databases</p>
+          <h2>Migrating existing git projects to OpenShift</h2>
+<pre><code contenteditable># This script assumes that your project is a git repo
+# with a git remote hosted on github.com
+cd $YOUR_PROJECT_FOLDER 
+git remote add upstream -m master git@github.com:ryanj/nodejs-custom-version-openshift.git
+# merge in a basic OpenShift skeleton
+git pull -s recursive upstream master</code></pre>
+          <p><a href='https://gist.github.com/ryanj/5267357'>a git-based approach</a></p>
         </section>
       </section>
       <section>
         <section>
-          <h2>Getting Started with OpenShift</h2> 
-          <h4 class='fragment roll-in'>pre-requisites:</h4>
-          <div class='fragment roll-in'>ruby, rubygems</div>
-          <div class='fragment roll-in'>git</div>
+          <h2>What does</h2><h1>OpenShift</h1><h2>add to your build automation workflow?</h1>       
         </section>
-        <section>
-          <h2>Installing the 'rhc' client tool</h2> 
-          <div class='fragment roll-in'><pre><code contenteditable>sudo gem install rhc</code></pre></div>
-          <div class='fragment roll-in'>and</div>
-          <div class='fragment roll-in'>install <a href='http://nodejs.org/'>node.js</a></div>
-        </section>
-        <section>
-          <h2>Help with client tools</h2> 
-          <ul>
-          <li class='fragment roll-in'><a href="https://openshift.redhat.com/community/developers/get-started">Openshift Getting Started guide</a></li>
-          <li class='fragment roll-in'><a href="https://openshift.redhat.com/community/developers/install-the-client-tools">RHC client tools installation</a></li>
-          </ul>
-        </section>
-      </section>
-      <section>
-        <section>
-          <h2>Configuring your dev environment</h2> 
-          <pre class='fragment roll-in'><code contenteditable>rhc setup</code></pre>
-          <div><ul><li class='fragment roll-in'>sets your openshift email address</li>
-                   <li class='fragment roll-in'>verifies your ssh key configuration</li>
-                   <li class='fragment roll-in'>selects your application namespace</li></ul></div>
-        </section>
-      </section>
-      <section>
         <section>
           <h2>Gearing up a new app on OpenShift</h2> 
           <div class='fragment roll-in'><pre><code contenteditable>rhc app create APP_NAME APP_CARTRIDGE</code></pre></div>
           <div class='fragment roll-in'>or</div>
-          <div class='fragment roll-in'><pre><code contenteditable>rhc app create darkslides nodejs mongodb-2.2 --from-code=https://github.com/ryanj/darkslides.git</code></pre></div>
+          <div class='fragment roll-in'><pre><code contenteditable>rhc app create darkslides nodejs --from-code=https://github.com/ryanj/darkslides.git</code></pre></div>
         </section>
         <section>
 <pre><code>Application Options
 -------------------
   Namespace:  ryanj
-  Cartridges: nodejs-0.6, mongodb-2.2
+  Cartridges: nodejs-0.6
   Source Code: https://github.com/ryanj/darkslides.git
   Gear Size:  default
   Scaling:    no
@@ -218,6 +213,20 @@ RESULT:
 Application darkslides was created.</code></pre>
         </section>
         <section>
+          <h2>Success!</h2> 
+          <p>You now have a basic node.js app up an running on OpenShift!</p>
+          <br/>
+          <p class='fragment roll-in'>Your gear is now configured with:</p> 
+          <div><ul><li class='fragment roll-in'>it's own git repo</li>
+                   <li class='fragment roll-in'>it's own web server</li>
+                   <li class='fragment roll-in'>a DB</li>
+                   <li class='fragment roll-in'>ssh access</li>
+                   <li class='fragment roll-in'>logging</li>
+                   <li class='fragment roll-in'>publicly accessible DNS</li></ul></div>
+        </section>
+        <section>
+          <h2>Cartridge-driven databases available</h2>
+<pre><code contenteditable>rhc cartridge add mongodb-2.2</code></pre>
           <pre><code contenteditable>Adding mongodb-2.2 to application 'parks' ... Success
 
 mongodb-2.2 (MongoDB NoSQL Database 2.2)
@@ -231,16 +240,13 @@ RESULT:
 Added mongodb-2.2 to application parks</code></pre>
         </section>
         <section>
-          <h2>Success!</h2> 
-          <p>You now have a basic node.js app up an running on OpenShift!</p>
-          <br/>
-          <p class='fragment roll-in'>Your gear is now configured with:</p> 
-          <div><ul><li class='fragment roll-in'>it's own git repo</li>
-                   <li class='fragment roll-in'>it's own web server</li>
-                   <li class='fragment roll-in'>MongoDB</li>
-                   <li class='fragment roll-in'>ssh access</li>
-                   <li class='fragment roll-in'>logging</li>
-                   <li class='fragment roll-in'>publicly accessible DNS</li></ul></div>
+          <h1>SSH and port forwarding</h1>
+          <p>ssh access</p>
+          <div class='fragment roll-in'><pre><code contenteditable>rhc ssh</code></pre></div>
+          <p>tail your logs</p>
+          <div class='fragment roll-in'><pre><code contenteditable>rhc tail APP_NAME</code></pre></div>
+          <p>local availability of remote databases</p>
+          <div class='fragment roll-in'><pre><code contenteditable>rhc port-forward</code></pre></div>
         </section>
       </section>
       <section>
@@ -252,37 +258,12 @@ Added mongodb-2.2 to application parks</code></pre>
           <h1>git push -> npm start</h1> 
         </section>
         <section>
-          <h1>npm install</h1> 
-          <h1>action hooks</h1> 
-        </section>
-        <section>
-          <h2>custom versions of node.js</h2> 
-        </section>
-        <section>
-          <h1>cron</h1> 
-        </section>
-        <section>
-          <h1>travis-ci, jenkins builds</h1> 
-        </section>
-        <section>
-          <h1>grunt concat, uglify</h1> 
-        </section>
-        <section>
-          <h1>SSH</h1> 
-        </section>
-        <section>
-          <h1>Environment variables</h1> 
-          <p>secret-free source</p>
-        </section>
-      </section>
-      <section>
-        <section>
-          <h2>Building your App</h2> 
-          <div class='fragment roll-in'><pre><code contenteditable> cd parks </code></pre></div>
-        </section>
-        <section>
-          <h2>Setting up MongoDB on Openshift</h2> 
-          <div class='fragment roll-in'><pre><code contenteditable>rhc cartridge add mongodb-2.2</code></pre></div>
+          <h1>The future:</h1> 
+          <h2>action hooks</h2> 
+          <h2>npm install</h2> 
+          <h2>grunt tasks</h2> 
+          <h2>npm start</h2> 
+          <h2>custom versions of node</h2> 
         </section>
         <section>
           <h2>Installing dependencies</h2>
@@ -291,18 +272,78 @@ Added mongodb-2.2 to application parks</code></pre>
           <p>Include the <code>-S</code> flag in order to save this dependency to your application's <code>package.json</code> file.</p>
           <p><a href="http://npmjs.org/package/mongojs/">http://npmjs.org/package/mongojs/</a></p>
         </section>
-      </section>
-      <section>
         <section>
-          <h2>Committing your changes</h2>
+          <h2>Run anywhere</h2>
+          <pre><code contenteditable>var http = require('http'),
+    ip   = process.env.OPENSHIFT_INTERNAL_IP || '127.0.0.1',
+    port = process.env.OPENSHIFT_INTERNAL_PORT || '8080';</code></pre>
+        </section>
+        <section>
+          <h2>Commit your changes</h2>
+          <br/>
+          <p>Add your changes</p>
           <pre><code contenteditable>git add package.json server.js</code></pre>
-          <p>Commit your changes locally</p>
-          <pre><code contenteditable>git commit -m 'adding mongojs npm dependency, initializing mongojs library, adding a basic API'</code></pre>
+          <p>Commit locally</p>
+          <pre><code contenteditable>git commit -m 'adding an npm dependency, initializing server'</code></pre>
+        </section>
+        <section>
+          <h1>Secret-Free Source</h1> 
+          <br/>
+          <p>Store your keys and secrets on the server:</p>
+          <pre><code contenteditable>rhc ssh
+echo "export SECRET_PASS=12345678910" | tee -a ~/app-root/data/.bash_profile</code></pre>
+          <br/>
+          <p>Source your <code>.bash_profile</code> to load them:</p>
+<pre><code contenteditable>cd YOUR_LOCAL_REPO
+echo "source ~/app-root/data/.bash_profile" | tee -a .openshift/action_hooks/pre_start_*
+git add .openshift/action_hooks/pre_start_*
+git commit -m 'importing bash profile during app init'</code></pre>
+          <p><a href='https://www.openshift.com/blogs/secret-free-source-on-paas'>more...</a></p>
+        </section>
+        <section>
+          <h1>Build Automation<h1>
+          <h2>travis-ci</h2>
+          <h2>Jenkins</h2> 
+          <h2>grunt concat, uglify</h2> 
+          <h2>cron</h2> 
         </section>
         <section>
           <h2>deployment</h2> 
           <div class='fragment roll-in'><pre><code contenteditable>git push</code></pre></div>
-          <div class='fragment roll-in'><p><b><i>Done!</i></b>Your spatial app should now be live <i>IN THE CLOUD!</i></p></div>
+          <div class='fragment roll-in'><p><b><i>Done!</i></b></p></div>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Advanced Release Management</h1>
+          <a href='https://www.openshift.com/blogs/release-management-in-the-cloud'><img style='height:50%' alt='release' src='img/redhat_shipment.png' /></a>
+        </section>
+        <section>
+          <h1>Establishing a release pipeline</h1> 
+          <p>(in two simple steps)</p>
+        </section>
+        <section>
+          <h1>Cloud auto-scaling</h1> 
+          <p>Create a new auto-scaling application:</p>
+          <pre><code contenteditable>rhc app create --no-git -s scaleup nodejs --from-code=https://github.com/ryanj/darkslides.git</code></pre>
+          <p>Add the resulting remote git url to a local project repo</p>
+          <pre><code contenteditable>git remote add production -m master NEW_GIT_URL</code></pre>
+          <p>pro tip:<p>
+          <pre><code contenteditable>git remote rename origin staging</code></pre>
+        </section>
+        <section>
+          <h1>release management workflows</h1> 
+          <p>deploy to staging</p>
+          <pre><code contenteditable>git push staging</code></pre>
+          <p>deploy to production</p>
+          <pre><code contenteditable>git push production</code></pre>
+          <p>rollbacks:</p>
+          <pre><code contenteditable>git log</code></pre>
+          <pre><code contenteditable>git push staging 28c5555352a902c549c965da30cf7559c80f328e:master</code></pre>
+        </section>
+        <section>
+          <h1>dns aliases</h1> 
+          <pre><code contenteditable>rhc alias add APP_NAME HOST_URL</code></pre>
         </section>
         <section data-state='alert'>
           <h1 class='fragment roll-in'><span class='fragment roll-in'>Public Cloud</span><span class='fragment roll-in'> + </span><span class='fragment roll-in'>Private Cloud</span><span class='fragment roll-in'> = </span></h1>
@@ -311,64 +352,28 @@ Added mongodb-2.2 to application parks</code></pre>
       </section>
       <section>
         <section>
-          <h2>SSH into your application container</h2>
-          <div>
-          <h3>SSH in to your OpenShift Gear</h3>
-          <pre><code contenteditable>rhc ssh</code></pre>
-          </div>
-        </section>
-      </section>
-      <section>
-        <section>
-          <h1>Advanced Release Management</h1>
-        </section>
-        <section>
-          <h1>Establishing a release pipeline</h1> 
-          <p>two steps</p>
-        </section>
-        <section>
-          <h1>auto-scaling</h1> 
-        </section>
-        <section>
-          <h1>dns aliases</h1> 
-        </section>
-        <section>
-          <h1>release management workflows</h1> 
-          <p>git push staging</p>
-          <p>git push production</p>
-          <p>rollbacks</p>
-        </section>
-        <section>
-          <h1>But is it realtime enough?</h1> 
-          <p>img of sceptical fry</p>
-          <h1>Sockets</h1> 
-        </section>
-      </section>
-      <section>
-        <section>
-          <h1>Conclusions</h1>
+          <h1>Conclusions:</h1>
           <ol>
             <li>fast</li>
             <li>future</li>
             <li>freedom</li>
             <li>fireballs</li>
           </ol>
+          <br/>
+          <a href='https://www.openshift.com/blogs/cloudy-with-a-chance-of-meteorjs'><img style='height:45%' src='img/meteorshift.png' alt='yeoman scaffolds'/></a>
         </section>
         <section>
           <p><i><b>Thanks for following along!</b></i></p>
           <p>--ryanj</p>
-          <p>Signup Code: <a href='https://openshift.redhat.com/app/account/new?web_user%5Bpromo_code%5D=HTML5CONF'>HTML5CONF</a></p>
+          <br/>
           <p><a href='http://bit.ly/XDCQAu'>http://bit.ly/XDCQAu</a></p>
         </section>
       </section>
-
       </div>
       <img style="position:fixed;width:15%;z-index:30;bottom:20px;left:20px;" src="img/RH_logo-trans_reverse.png"/>
     </div>
-
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.min.js"></script>
-
     <script>
       // Full list of configuration options available here:
       // https://github.com/hakimel/reveal.js#configuration

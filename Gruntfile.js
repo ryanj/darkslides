@@ -14,7 +14,6 @@ module.exports = function(grunt) {
 				' * Copyright (C) 2013 Hakim El Hattab, http://hakim.se\n' +
 				' */'
 		},
-
 		// Tests will be added soon
 		qunit: {
 			files: [ 'test/**/*.html' ]
@@ -52,7 +51,52 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-
+    open: {
+      server: {
+        path: 'http://localhost:<%= connect.options.port %>'
+      }   
+    },  
+    clean: {
+      dist: ['.tmp', '<%= yeoman.dist %>/*'],
+      server: '.tmp'
+    },
+    connect: {
+      options: {
+        port: 8080,
+        // change this to '0.0.0.0' to access the server from outside
+        hostname: 'localhost'
+      },
+      //livereload: {
+      //  options: {
+      //    middleware: function (connect) {
+      //      return [
+      //        lrSnippet,
+      //        mountFolder(connect, '.tmp'),
+      //        mountFolder(connect, 'app')
+      //      ];
+      //    }
+      //  }
+      //},  
+      test: {
+        options: {
+          //middleware: function (connect) {
+          //  return [
+          //    mountFolder(connect, '.tmp'),
+          //    mountFolder(connect, 'test')
+          //  ];  
+          //}   
+        }   
+      },  
+      dist: {
+        options: {
+          middleware: function (connect) {
+            //return [
+            //  mountFolder(connect, 'dist')
+            //];  
+          }   
+        }   
+      }   
+    }, 
 		jshint: {
 			options: {
 				curly: false,
@@ -74,18 +118,19 @@ module.exports = function(grunt) {
 			},
 			files: [ 'Gruntfile.js', 'js/reveal.js' ]
 		},
-
 		watch: {
 			main: {
-				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
+				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css', 'views/index.ejs' ],
 				tasks: 'default'
-			},
-			theme: {
-				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
-				tasks: 'themes'
-			}
-		}
+			//},
+			//theme: {
+			//	files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
+			//	tasks: 'themes'
+			//},
 
+      
+      }
+		}
 	});
 
 	// Dependencies
@@ -96,9 +141,24 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-contrib-sass' );
 
 	// Default task
-	grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify' ] );
+	//grunt.registerTask( 'test', [ 'clean:server', 'connect:test' ] );
+	grunt.registerTask( 'default', [ 'jshint' ] );
+	grunt.registerTask( 'build', [ 'clean:dist','htmlmin','concat','cssmin','uglify' ] );
+  grunt.registerTask('server', function (target) {
+    if (target === 'dist') {
+      return grunt.task.run(['build', 'open', 'connect:dist', 'keepalive']);
+    }
+
+    grunt.task.run([
+      //'clean:server',
+      //'compass:server',
+      //'livereload-start',
+      //'connect:livereload',
+      'open',
+      'watch'
+    ]);
+  });
 
 	// Theme task
 	grunt.registerTask( 'themes', [ 'sass' ] );
-
 };
