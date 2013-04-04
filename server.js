@@ -38,9 +38,13 @@ var DarkSlides = function() {
                 secret: process.env.OPENSHIFT_DARKSLIDE_SECRET, 
                 socketId: process.env.OPENSHIFT_DARKSLIDE_SOCKET
             };
+            console.log("Reusing existing secret tokens: " + JSON.stringify(self.keyPair));
         }else{
             self.keyPair = self.createKeyPair();
+            console.log('GENERATING NEW DARKSLIDES SECRET: '+ JSON.stringify(keyPair));
+            console.log("New secret tokens will be generated on startup " );
         }
+        console.log("Configure your browser for presentations by entering the following in your broswer's web console: localStorage['secret'] = '" + JSON.stringify(self.keyPair.secret) + "';" );
     };
 
     self.createHash = function(secret) {
@@ -151,7 +155,6 @@ var DarkSlides = function() {
         var rand = Math.floor(Math.random()*9999999);
         var secret = ts.toString() + rand.toString();
         var keyPair = {secret: secret, socketId: self.createHash(secret)};
-        console.log(keyPair);
         return keyPair;
     };
 

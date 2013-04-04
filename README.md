@@ -1,18 +1,37 @@
 # Welcome to the DarkSlide
 
 [![Build Status](https://travis-ci.org/ryanj/darkslides.png?branch=master)](https://travis-ci.org/ryanj/darkslides)
-[![HTMLlint](http://badges.brihten.com/lint/badge-medium.png)](http://lint.brihten.com/html/report?u=http%3A//darkslides-rjdemo.rhcloud.com&s=0000000)
+[![HTMLlint](http://badges.brihten.com/lint/badge-medium.png)](http://lint.brihten.com/html/report?u=http%3A//darkslides-rjdemo.rhcloud.com&s=1111110)
 
-Node.js on OpenShift
-====================================================================
+### Configure your browser for broadcasting
+Broadcast your [reveal.js](http://lab.hakim.se/reveal-js/) slide presentation (emit page-change events to connected browsers) by including your broadcast secret in your browser's `localStorage`.
+
+    # in your browser's web console, set YOUR OWN broadcast secret:
+    localStorage['secret'] = '1365092520963708958';
+
+### Find your broadcast secrets
+Your broadcast secret and socket channel identifier will be written to your application's log file during it's startup phase.  Tail your logs during a deploy (`rhc tail APP_NAME`), or use `rhc ssh APP_NAME` to connect to your application and review it's log output.
+
+    GENERATING A NEW DARKSLIDE SECRET: { secret: '1365092520963708958', socketId: '65f796f6fec6e9a7' }
+
+### Recycling your secret tokens
+A new `secret` and `socketId` pair will be generated each time your application starts.  To reuse an existing pair of broadcaster credentials, follow our guide on [keeping your source code secret-free](https://www.openshift.com/blogs/secret-free-source-on-paas) and set your `OPENSHIFT_DARKSLIDE_SECRET` and `OPENSHIFT_DARKSLIDE_SOCKET` (as described in steps 1 and 2).
+
+### Export to PDF
+To convert your slides to a PDF, just print to a file with your page layout configured for landscape mode.
+
+### Steal this presentation
+You can host your own clone of these slides by entering the following on your command prompt:
+
+    rhc app create darkslides nodejs --from-code=https://github.com/ryanj/darkslides.git
+
+# Node.js on OpenShift
 This package includes a dynamic Node.js build stage that will provide your application with a customized Node.js runtime.
 The version of Node that is available will depend on the requirements listed in your application's `package.json` file.
 
 See: `.openshift/action_hooks/` for more informaiton on how the OpenShift build process works.
 
-Basic Setup
------------
-
+## Basic Setup
 If this is your first time using OpenShift Online or Node.js, you'll have some quick prep-work to do:
 
 1. [Create an OpenShift Online account](http://openshift.redhat.com/app/account/new)
@@ -25,19 +44,7 @@ If you need any additional help getting started, these links may come in handy:
  * https://openshift.redhat.com/community/get-started#cli
  * https://openshift.redhat.com/community/developers/rhc-client-tools-install
 
-Host your Node.js applications on OpenShift
--------------------------------------------
-
-Create a Node.js application.  This example will produce an application named **nodeapp**:
-
-    rhc app create darkslides nodejs --from-code=git://github.com/ryanj/darkslides.git
-
-The above example will output a folder named after your application which contains your local development source.  Make sure to run it from within a directory where you would like to store your development code.
-
-That's it!  You should be able to access your application at:
-
-    http://darkslides-$yournamespace.rhcloud.com
-
+## Selecting your version of Node.js
 If your app requires a specific version of Node.js, just update the 'engines' section of your app's `package.json` file to specify your runtime requirements:
 
     "engines": {
