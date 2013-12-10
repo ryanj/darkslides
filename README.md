@@ -32,7 +32,7 @@ Then push your updates to OpenShift
 Additional updates can be made via the same `git add`, `git commit`, and `git push` workflow.
 
 ### Finding your broadcast secrets
-Your broadcast secret and socket channel identifier will be written to your application's log file during it's startup phase.  Tail your logs during a deploy (`rhc tail APP_NAME`), or use `rhc ssh APP_NAME` to connect to your application and review it's log output with `tail -f `.
+Your broadcast secret and socket channel identifier will be written to your application's log file during it's startup phase.  Tail your logs during a deploy (`rhc tail APP_NAME`), or use `rhc ssh APP_NAME` to connect to your application and review it's log output with `tail -f $OPENSHIFT_NODEJS_LOG_DIR/node.log`.
 
     GENERATING A NEW DARKSLIDE SECRET: { secret: '1365092520963708958', socketId: '65f796f6fec6e9a7' }
 
