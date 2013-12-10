@@ -4,6 +4,17 @@
       || localStorage.secret == undefined
       || localStorage.secret == null
        ) {
+
+        //Persist presenter token when supplied via hash:
+        if ( window.location.hash.match( /#setToken:[^ ]/ )){
+          console.log('Persisting presenter token');
+          localStorage.secret = window.location.hash.slice(10);
+          window.location.hash = '';
+          window.location.reload();
+        }
+        if ( window.location.hash.match( /#clearToken/ )){
+          localStorage.clear();
+        }
         console.log('Configuring client mode');
         var multiplex = Reveal.getConfig().multiplex;
         var socketId = multiplex.id;
