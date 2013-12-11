@@ -4,16 +4,26 @@ Broadcast your [reveal.js](http://lab.hakim.se/reveal-js/) slide presentation (e
 [![Build Status](https://travis-ci.org/ryanj/darkslides.png?branch=master)](https://travis-ci.org/ryanj/darkslides)
 [![HTMLlint](http://badges.brihten.com/lint/badge-medium.png)](http://lint.brihten.com/html/report?u=http%3A//darkslides-rjdemo.rhcloud.com&s=1111110)
 
-### Clone a copy of this presentation
-You can host your own clone of these slides by entering the following on your command prompt:
+## Local Development
 
-    rhc app create darkslides nodejs-0.10 --from-code=https://github.com/ryanj/darkslides.git
+Just like any other nodejs app, run:
 
-## Making changes to your OpenShift-hosted slides:
+    npm install
+
+followed by
+
+    npm start
+
+### Hosting on OpenShift
+OpenShift offers free hosting, providing an easy way to clone+deploy this project in a single command:
+
+    rhc app create slides nodejs-0.10 --from-code=https://github.com/ryanj/darkslides.git
+
+### Updating your OpenShift-hosted slides:
 Commit your changes locally:
 
     git add views/index.ejs
-    git commit -m 'Replacing the default slide content with a new deck!'
+    git commit -m 'Replacing the default slide content with a new deck'
 
 Then push your updates to OpenShift
 
@@ -22,11 +32,11 @@ Then push your updates to OpenShift
 Additional updates can be made via the same `git add`, `git commit`, and `git push` workflow.
 
 ### Finding your broadcast secrets
-Your broadcast secret and socket channel identifier will be written to your application's log file during it's startup phase.  Tail your logs during a deploy (`rhc tail APP_NAME`), or use `rhc ssh APP_NAME` to connect to your application and review it's log output.
+Your broadcast secret and socket channel identifier will be written to your application's log file during it's startup phase.  Tail your logs during a deploy (`rhc tail APP_NAME`), or use `rhc ssh APP_NAME` to connect to your application and review it's log output with `tail -f $OPENSHIFT_NODEJS_LOG_DIR/node.log`.
 
     GENERATING A NEW DARKSLIDE SECRET: { secret: '1365092520963708958', socketId: '65f796f6fec6e9a7' }
 
-### Configure a browser for broadcasting
+### Configuring a browser for broadcasting
 Set your broadcaster token by adding your own broadcast secret (shown in the server init output), to the following URL:
 
     http://YOUR_APPLICATION_URL/#setToken:1365092520963708958
